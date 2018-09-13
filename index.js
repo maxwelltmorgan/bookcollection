@@ -56,7 +56,7 @@ function render() {
                 let readToggle =document.createElement("a")
                 readToggle.classList.add("readtoggle")
 
-                readToggle.innerHTML = "update status"
+                readToggle.innerHTML = "toggle status"
                 readToggle.addEventListener("click", function() { toggleRead(index) })
                 bookRow.append(readToggle)
                 collection.append(bookRow)

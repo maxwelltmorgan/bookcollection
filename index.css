@@ -131,13 +131,13 @@ td {
 }
 
 .readtoggle {
-    padding-right: 10px;
-    font-size: .4rem;
-    color: dodgerblue;
+    padding-right: 20px;
+    font-size: .5rem;
+    color: lightgrey;
 }
 
 .readtoggle:hover {
-    color: darkblue;
+    color: blue;
     font-size: .6rem;
 }
 
@@ -146,12 +146,12 @@ td {
 }
 
 .remove {
-    font-size: .4rem;
-    color: red;
+    font-size: .5rem;
+    color: lightgrey;
 }
 
 .remove:hover {
-    color: darkred;
+    color: red;
     font-size: .6rem;
 }
 
@@ -167,6 +167,16 @@ td {
     text-transform: uppercase;
     border-radius: 5px;
     padding-top: 5px;
+}
+
+#submit:hover {
+    border-color: darkblue;
+    color: darkblue;
+}
+
+#submit:active {
+    background-color: white;
+    color: darkblue;
 }
 
 #collection {
