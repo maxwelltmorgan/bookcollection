@@ -1,0 +1,186 @@
+@font-face {
+  font-family: PWScratched;
+  src: url('PWScratchedfont.ttf');
+}
+
+@font-face {
+  font-family: tkArch;
+  src: url('tk-architect.ttf');
+}
+
+html {
+
+}
+
+header {
+    background-color: rgb(0, 0, 150);
+    height: 100px;
+    font-family: "PWScratched";
+    font-size: 5rem;
+    text-align: center;
+    padding-top: 20px;
+    color: white;
+}
+
+header h3 {
+    font-size: 1rem;
+}
+
+#toggle {
+    position: absolute;
+    height: 35px;
+    border-radius: 5px;
+    top: 40px;
+    right: 20px;
+    color: rgba(255,255,255);
+    background-color: dodgerblue;
+    font-family: "tkArch";
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding-top: 5px;
+}
+
+#toggle:hover {
+    border-color: darkblue;
+    color: darkblue;
+}
+
+#toggle:active {
+    background-color: white;
+    color: darkblue;
+}
+
+form {
+    padding-top: 20px;
+}
+
+input {
+    border-radius: 5px;
+    border: 1px solid grey;
+    font-family: "tkArch";
+    text-transform: uppercase;
+    font-size: .6rem;
+    letter-spacing: 1.5px;
+    padding: 8px;
+}
+
+body {
+    background-image: url("bookshelf2.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100vh;
+    background-position: center;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    margin: 0 5px;
+    height: 100vh;
+}
+
+form {
+    text-align: center;
+    font-family: "tkArch";
+    text-transform: uppercase;
+    font-size: .6rem;
+}
+
+label {
+    letter-spacing: 1px;
+}
+
+table {
+    margin: 0 auto;
+}
+
+.headrow {
+    font-family: "tkArch";
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    text-align: left;
+    padding-top: 20px;
+    padding-right: 70px;
+    padding-bottom: 20px;
+    color: rgb(0, 0, 150);
+}
+
+.author {
+    padding-right: 40px;
+}
+
+.pages {
+    padding-right: 30px;
+}
+
+.read {
+    padding-right: 20px;
+}
+
+.empty {
+    padding-right: 0;
+}
+
+tr {
+    border-bottom: dashed rgb(220,220,220) 1px;
+    line-height: 20px;
+}
+
+td {
+    letter-spacing: 1.5px;
+    padding-right: 25px;
+}
+
+.readtoggle {
+    padding-right: 10px;
+    font-size: .4rem;
+    color: dodgerblue;
+}
+
+.readtoggle:hover {
+    color: darkblue;
+    font-size: .6rem;
+}
+
+.readtoggle:active {
+    color: darkgrey;
+}
+
+.remove {
+    font-size: .4rem;
+    color: red;
+}
+
+.remove:hover {
+    color: darkred;
+    font-size: .6rem;
+}
+
+.remove:active {
+    color: darkgrey;
+}
+
+#submit {
+    color: rgba(255,255,255);
+    background-color: dodgerblue;
+    font-family: "tkArch";
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    padding-top: 5px;
+}
+
+#collection {
+    font-family: "tkArch";
+    font-size: .75rem;
+    text-transform: uppercase;
+    color: rgb(128,128,128);
+    border-bottom: dashed rgb(220,220,220) 1px;
+}
+
+#content{
+  display: none;
+}
+
+#content.show{
+    display: block;
+}

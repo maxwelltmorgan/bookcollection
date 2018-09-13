@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library</title>
+    <meta charset="UTF-8" />
+    <link href="reset.css" rel="stylesheet" type="text/css"/>
+    <link href="index.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <header>
+    <h1>Bookcase</h1>
+    <h3>carefully designed to inventory your books</h3>
+    </header>
+    <div class="container">
+    <button id="toggle">Add New Book</button>
+    <div id="content">
+        <form class="form">
+            <fieldset>
+                <input name="title" type="text" id="new-title" placeholder="Book Title">
+                <input type="text" id="new-author" placeholder="Author">
+                <input type="text" id="new-pages" placeholder="# of pages">
+                <label for="new-read">Read Status (Y/N)</label>
+                <input type="checkbox" id="new-read">
+                <button type="button" id="submit" onclick="addToLibrary();">Submit</button>
+            </fieldset>
+        </form>
+    </div>
+        <table>
+            <thead>
+                <tr>
+                    <th class="headrow">Title</th>
+                    <th class="headrow author">Author</th>
+                    <th class="headrow pages">Pages</th>
+                    <th class="headrow read">Status</th>
+                    <th class="headrow empty"></th>
+                </tr>
+            </thead>
+            <tbody id="collection">
+            </tbody>
+        </table>
+    </div>
+    <script src="index.js" type="text/javascript"></script>
+</body>
+</html>
