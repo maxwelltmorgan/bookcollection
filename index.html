@@ -14,7 +14,7 @@
     <div class="container">
     <button id="toggle">Add New Book</button>
     <div id="content">
-        <form class="form">
+        <form class="form" id="book-form">
             <fieldset>
                 <input name="title" type="text" id="new-title" placeholder="Book Title">
                 <input type="text" id="new-author" placeholder="Author">
@@ -38,7 +38,10 @@
             <tbody id="collection">
             </tbody>
         </table>
+        <div id="object"></div>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+
     <script src="index.js" type="text/javascript"></script>
 </body>
 </html>
