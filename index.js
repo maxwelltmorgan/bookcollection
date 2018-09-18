@@ -1,3 +1,12 @@
+const collection = document.getElementById("collection")
+const toggle  = document.getElementById("toggle");
+const content = document.getElementById("content");
+const newTitle = document.getElementById("new-title");
+const newAuthor = document.getElementById("new-author");
+const newPages = document.getElementById("new-pages");
+const newRead = document.getElementById("new-read");
+const submitButton = document.getElementById("submit");
+
 var config = {
     apiKey: "AIzaSyCALA0uHFAXYtudIfa3onw1MDyC0zzHzMw",
     authDomain: "library-ebc41.firebaseapp.com",
@@ -10,58 +19,50 @@ firebase.initializeApp(config);
 
 const booksRef = firebase.database().ref('books');
 
-booksRef.once("value").then(function(snapshot) {
-snapshot.forEach(function(childSnapshot) {
-  var key = childSnapshot.key;
-  var childData = childSnapshot.val();
-  var title_val = childSnapshot.val().title;
-  var author_val = childSnapshot.val().author;
-  var pages_val = childSnapshot.val().pages;
-  var read_val = childSnapshot.val().read;
+booksRef.once("value",function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
 
-  let bookRow = document.createElement("tr")
-  const bookprop = [title_val,author_val,pages_val,read_val]
-  for (let i = 0; i < bookprop.length; i++) {
-      let bookCell = document.createElement("td")
-      bookCell.innerHTML = [bookprop[i]]
-      bookRow.append(bookCell)
-  }
+    var key = childSnapshot.key;
+    var childData = childSnapshot.val();
+    var title_val = childSnapshot.val().title;
+    var author_val = childSnapshot.val().author;
+    var pages_val = childSnapshot.val().pages;
+    var read_val = childSnapshot.val().read;
 
-  let readToggle = document.createElement("a")
-  readToggle.classList.add("readtoggle")
-  readToggle.innerHTML = "toggle status"
+    let bookRow = document.createElement("tr")
+    const bookprop = [title_val,author_val,pages_val,read_val]
+    for (let i = 0; i < bookprop.length; i++) {
+        let bookCell = document.createElement("td")
+        bookCell.innerHTML = [bookprop[i]]
+        bookRow.append(bookCell)
+    }
 
-  function toggleRead() {
-    read_val = (read_val == "unread" ? "read" : "unread")
-    booksRef.child(key).update( {read: read_val})
-  }
+    let readToggle = document.createElement("a")
+    readToggle.classList.add("readtoggle")
+    readToggle.innerHTML = "toggle status"
 
-  readToggle.addEventListener("click", function() { toggleRead(read_val) })
-  bookRow.append(readToggle)
-  collection.append(bookRow)
+    function toggleRead() {
+        read_val = (read_val == "unread" ? "read" : "unread")
+        booksRef.child(key).update( {read: read_val})
+    }
 
-  let removeButton = document.createElement("a")
-  removeButton.classList.add("remove")
-  removeButton.innerHTML = "remove"
+    readToggle.addEventListener("click", function() { toggleRead(read_val) })
+    bookRow.append(readToggle)
+    collection.append(bookRow)
 
-  function removeFromLibrary() {
-    booksRef.child(key).remove();
-  }
+    let removeButton = document.createElement("a")
+    removeButton.classList.add("remove")
+    removeButton.innerHTML = "remove"
 
-  removeButton.addEventListener("click", function() { removeFromLibrary(key) })
-  bookRow.append(removeButton)
-  collection.append(bookRow)
-  });
+    function removeFromLibrary() {
+        booksRef.child(key).remove();
+    }
+
+    removeButton.addEventListener("click", function() { removeFromLibrary(key) })
+    bookRow.append(removeButton)
+    collection.append(bookRow)
+    });
 });
-
-const collection = document.getElementById("collection")
-const toggle  = document.getElementById("toggle");
-const content = document.getElementById("content");
-const newTitle = document.getElementById("new-title");
-const newAuthor = document.getElementById("new-author");
-const newPages = document.getElementById("new-pages");
-const newRead = document.getElementById("new-read");
-const submitButton = document.getElementById("submit");
 
 function saveBook(title, author, pages, read){
     const newBookRef = booksRef.push();
