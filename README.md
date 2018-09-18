@@ -1,6 +1,6 @@
 # Bookcase
 
-## Project completed as part of The Odin Project course work
+### Project completed as part of The Odin Project course work
 
 ![bookcase screenshot](bookcase_screenshot.jpg)
 
