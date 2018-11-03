@@ -8,10 +8,6 @@
   src: url('tk-architect.ttf');
 }
 
-html {
-
-}
-
 header {
     background-color: rgb(0, 0, 150);
     height: 100px;
@@ -62,6 +58,16 @@ input {
     font-size: .6rem;
     letter-spacing: 1.5px;
     padding: 8px;
+}
+
+input:invalid {
+  background-color: #ff9999;
+  color: #660000;
+}
+
+input:valid {
+  background-color: inherit;
+  color: black;
 }
 
 body {
