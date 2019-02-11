@@ -44,6 +44,7 @@ booksRef.once("value",function(snapshot) {
     function toggleRead() {
         read_val = (read_val == "unread" ? "read" : "unread")
         booksRef.child(key).update( {read: read_val})
+        location.reload();
     }
 
     readToggle.addEventListener("click", function() { toggleRead(read_val) })
@@ -56,12 +57,14 @@ booksRef.once("value",function(snapshot) {
 
     function removeFromLibrary() {
         booksRef.child(key).remove();
+        location.reload();
     }
 
     removeButton.addEventListener("click", function() { removeFromLibrary(key) })
     bookRow.append(removeButton)
     collection.append(bookRow)
     });
+
 });
 
 function saveBook(title, author, pages, read){
@@ -72,6 +75,7 @@ function saveBook(title, author, pages, read){
         pages: pages,
         read: read
     });
+    location.reload()
 }
 
 function addToLibrary() {
